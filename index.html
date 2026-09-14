@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Krish Kourav - Freelance Graphic Designer. Share your design project details.">
+    <title>Krish Kourav · Design Inquiry Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="inquiry-container">
+        <!-- Progress Bar -->
+        <div class="progress-wrapper">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="step-counter">
+                <span id="currentStep">0</span> / <span id="totalSteps">6</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="form-container">
+            <!-- Welcome Screen -->
+            <section class="screen screen--welcome active" id="welcomeScreen">
+                <div class="screen-content">
+                    <h1 class="heading-primary">Welcome to Krish Kourav's Graphic Design Inquiry Form</h1>
+                    <p class="description">
+                        I'm Krish Kourav, a passionate freelance graphic designer. Let's create something amazing together! 
+                        Please share some details about your project so I can help bring your vision to life.
+                    </p>
+                    <button class="btn btn--primary" id="getStartedBtn" aria-label="Start the inquiry form">
+                        Get Started
+                    </button>
+                    <p class="note">⏱ Takes 2 minutes</p>
+                </div>
+            </section>
+
+            <!-- Step 1: Name -->
+            <section class="screen" id="step1Screen" data-step="1">
+                <div class="screen-content">
+                    <h2 class="heading-secondary">What is your name?</h2>
+                    <form class="form-group" id="nameForm">
+                        <label for="nameInput" class="sr-only">Your name</label>
+                        <input 
+                            type="text" 
+                            id="nameInput" 
+                            class="input-field" 
+                            placeholder="Enter your name" 
+                            required
+                            autocomplete="name"
+                            aria-label="Your full name"
+                        >
+                        <div class="error-message" id="nameError" aria-live="polite" aria-atomic="true"></div>
+                        <div class="button-group">
+                            <button type="button" class="btn btn--secondary hidden" id="backBtn1">Back</button>
+                            <button type="submit" class="btn btn--primary">Continue</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Step 2: Email -->
+            <section class="screen" id="step2Screen" data-step="2">
+                <div class="screen-content">
+                    <h2 class="heading-secondary">What is your email address?</h2>
+                    <form class="form-group" id="emailForm">
+                        <label for="emailInput" class="sr-only">Your email address</label>
+                        <input 
+                            type="email" 
+                            id="emailInput" 
+                            class="input-field" 
+                            placeholder="your@email.com" 
+                            required
+                            autocomplete="email"
+                            aria-label="Your email address"
+                        >
+                        <div class="error-message" id="emailError" aria-live="polite" aria-atomic="true"></div>
+                        <div class="button-group">
+                            <button type="button" class="btn btn--secondary" id="backBtn2">Back</button>
+                            <button type="submit" class="btn btn--primary">Continue</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Step 3: Design Type -->
+            <section class="screen" id="step3Screen" data-step="3">
+                <div class="screen-content">
+                    <h2 class="heading-secondary">What type of design do you need?</h2>
+                    <fieldset class="options-fieldset">
+                        <legend class="sr-only">Select the type of design you need</legend>
+                        <div class="options-grid" id="designTypeOptions">
+                            <label class="option-card">
+                                <input type="radio" name="designType" value="Logo design" class="sr-only" required>
+                                <span class="option-label">Logo design</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="designType" value="Social media designs" class="sr-only" required>
+                                <span class="option-label">Social media designs</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="designType" value="YouTube thumbnail" class="sr-only" required>
+                                <span class="option-label">YouTube thumbnail</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="designType" value="Poster or flyer" class="sr-only" required>
+                                <span class="option-label">Poster or flyer</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="designType" value="Branding" class="sr-only" required>
+                                <span class="option-label">Branding</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="designType" value="Something else" class="sr-only" required>
+                                <span class="option-label">Something else</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="button-group">
+                        <button type="button" class="btn btn--secondary" id="backBtn3">Back</button>
+                        <button type="button" class="btn btn--primary" id="continueBtn3" disabled>Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4: Project Description -->
+            <section class="screen" id="step4Screen" data-step="4">
+                <div class="screen-content">
+                    <h2 class="heading-secondary">Tell me about your project.</h2>
+                    <form class="form-group" id="projectForm">
+                        <label for="projectInput" class="sr-only">Project description</label>
+                        <textarea 
+                            id="projectInput" 
+                            class="textarea-field" 
+                            placeholder="Share your goals, ideas, style preferences, timeline, target audience, and any other details that will help me understand your vision..." 
+                            required
+                            aria-label="Tell us about your project"
+                            rows="8"
+                        ></textarea>
+                        <div class="error-message" id="projectError" aria-live="polite" aria-atomic="true"></div>
+                        <div class="button-group">
+                            <button type="button" class="btn btn--secondary" id="backBtn4">Back</button>
+                            <button type="submit" class="btn btn--primary">Continue</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Step 5: Budget -->
+            <section class="screen" id="step5Screen" data-step="5">
+                <div class="screen-content">
+                    <h2 class="heading-secondary">What is your estimated budget?</h2>
+                    <fieldset class="options-fieldset">
+                        <legend class="sr-only">Select your budget range</legend>
+                        <div class="options-grid" id="budgetOptions">
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="Under ₹1,000" class="sr-only" required>
+                                <span class="option-label">Under ₹1,000</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="₹1,000–₹3,000" class="sr-only" required>
+                                <span class="option-label">₹1,000–₹3,000</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="₹3,000–₹5,000" class="sr-only" required>
+                                <span class="option-label">₹3,000–₹5,000</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="₹5,000+" class="sr-only" required>
+                                <span class="option-label">₹5,000+</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="Let's discuss" class="sr-only" required>
+                                <span class="option-label">Let's discuss</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="button-group">
+                        <button type="button" class="btn btn--secondary" id="backBtn5">Back</button>
+                        <button type="button" class="btn btn--primary" id="continueBtn5" disabled>Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 6: Timeline -->
+            <section class="screen" id="step6Screen" data-step="6">
+                <div class="screen-content">
+                    <h2 class="heading-secondary">When do you need it?</h2>
+                    <fieldset class="options-fieldset">
+                        <legend class="sr-only">Select your timeline</legend>
+                        <div class="options-grid" id="timelineOptions">
+                            <label class="option-card">
+                                <input type="radio" name="timeline" value="As soon as possible" class="sr-only" required>
+                                <span class="option-label">As soon as possible</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="timeline" value="Within one week" class="sr-only" required>
+                                <span class="option-label">Within one week</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="timeline" value="Within one month" class="sr-only" required>
+                                <span class="option-label">Within one month</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="timeline" value="Flexible timeline" class="sr-only" required>
+                                <span class="option-label">Flexible timeline</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="button-group">
+                        <button type="button" class="btn btn--secondary" id="backBtn6">Back</button>
+                        <button type="button" class="btn btn--primary" id="submitBtn" disabled>Submit</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completion Screen -->
+            <section class="screen screen--completion" id="completionScreen">
+                <div class="screen-content completion-content">
+                    <div class="checkmark-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h2 class="heading-secondary">Thank you!</h2>
+                    <p class="description">
+                        Your inquiry has been sent. Krish will get back to you soon.
+                    </p>
+                    <button type="button" class="btn btn--text" id="restartBtn">
+                        Submit another response
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
